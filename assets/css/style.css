@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+ background-image: url("../images/crazytrain.jpg");
+ background-position: top;
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.jumbotron {
+    background: rgba(211,211,211,0.5);
+      color:red;
+      font-family: 'Creepster', cursive;
+      
+}
+
+span{
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink{
+    0%{opacity: 0;}
+    50%{opacity: .5;}
+    100%{opacity: 1;}
+    }
+
+.card {
+    background: rgba(211,211,211,0.5);
+    color:black;
+    
+
+}
+
+.card-header {
+    font-family: 'Creepster', cursive;
+    color: black;
+}
+
+#adder {
+    margin-bottom:50px; 
+}
+

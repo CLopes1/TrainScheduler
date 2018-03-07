@@ -13,10 +13,16 @@
     <!-- Firebase -->
     <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 
+    <!-- Bootstrap -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 
-    <!-- <link rel="stylesheet" href="./assets/css/style.css"> -->
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Creepster" rel="stylesheet">
+
+    <!-- my css -->
+    <link rel="stylesheet" href="./assets/css/style.css">
 
 
 
@@ -28,7 +34,7 @@
 
             <div class="jumbotron jumbotron-fluid text-center">
                 <div class="container">
-                    <h1 class="display-4" id="display-4">Crazy Train</h1>
+                    <h1 class="display-1 blink" id="display-1"><span>Crazy Train</span></h1>
                     <br>
                     <p></p>
 
@@ -39,10 +45,10 @@
             <div class="container">
 
                 <!-- Train Information Display -->
-                
+
                 <div class="card">
                     <div class="card-header">
-                        <h3>Current Train Schedule</h3>
+                        <h3>Current Schedule</h3>
                     </div>
                     <div class="card-body">
                         <blockquote class="blockquote mb-0">
@@ -53,7 +59,7 @@
                                 <div class="col-2">Frequency(min)</div>
                                 <div class="col-2">Next Arrival</div>
                                 <div class="col-2">Minutes Away</div>
-                                
+
                             </div>
                             <hr>
                             <div class="row" id="dynamicData">
@@ -70,7 +76,7 @@
                 <br>
                 <br>
 
-                <div class="card">
+                <div class="card" id="adder">
                     <div class="card-header">
                         <h3>Add Trains</h3>
                     </div>
@@ -93,7 +99,7 @@
                                     <label for="formGroupExampleInput2">Frequency (min)</label>
                                     <input type="text" class="form-control" id="frequency" placeholder="Frequency">
                                 </div>
-                                <input class="btn btn-primary" id="submit" type="submit" value="Add Train">
+                                <input class="btn btn-danger" id="submit" type="submit" value="Add Train">
 
                             </form>
 
