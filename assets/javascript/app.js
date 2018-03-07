@@ -56,16 +56,9 @@ database.ref().on("value", function (snapshot) {
     })
 
 
-
-
-
     //Next Train & Minutes Away Logic
     // database.ref().orderByChild("timeStamp").limitToLast(100).on("child_added", function (childsnapshot) {
         database.ref().on('child_added', function (childsnapshot) {
-
-        $('#addTrain').append(`<div>${childsnapshot.val().trainName}</div>`)
-        $('#addDest').append(`<div>${childsnapshot.val().destination}</div>`)
-        $('#addFreq').append(`<div>${childsnapshot.val().frequency}</div>`)
 
         // Assumptions
         var tFrequency = childsnapshot.val().frequency
@@ -92,22 +85,19 @@ database.ref().on("value", function (snapshot) {
         // Minute Until Train
         var tMinutesTillTrain = tFrequency - tRemainder;
         console.log("MINUTES TILL TRAIN: " + tMinutesTillTrain);
-        $('#addMinAway').append(`<div>${tMinutesTillTrain}</div>`)
 
         // Next Train
         var nextTrain = moment().add(tMinutesTillTrain, "minutes");
         console.log("ARRIVAL TIME: " + moment(nextTrain).format("hh:mm"));
-        $('#addNextArr').append(`<div>${nextTrain.format('hh:mm')}</div>`)
+       
 
         //Append the data to the current train schedule table
+        $('#addTrain').append(`<div>${childsnapshot.val().trainName}</div>`)
+        $('#addDest').append(`<div>${childsnapshot.val().destination}</div>`)
+        $('#addFreq').append(`<div>${childsnapshot.val().frequency}</div>`)
+        $('#addMinAway').append(`<div>${tMinutesTillTrain}</div>`)
+        $('#addNextArr').append(`<div>${nextTrain.format('hh:mm')}</div>`)
 
-    
-        // database.ref().orderByChild('number').limitToLast(1).on('child_added', function(childsnapshot) {
-        //      console.log('hi')
-        //     console.log(snapshot.val())
-        //  })
-
-        // console.log(childsnapshot.val())
 
         // Handle the errors
     }, function (errorObject) {
