@@ -30,7 +30,7 @@ var minAway
 // At the initial load and subsequent value changes, get a snapshot of the stored data.
 // This function allows you to update your page in real-time when the firebase database changes.
 
-database.ref().on("value", function (snapshot) {
+    // database.ref().on("value", function (snapshot) {
 
     // Capture the user's input to the database when clicking on the submit button.
 
@@ -50,7 +50,7 @@ database.ref().on("value", function (snapshot) {
             destination: destination,
             firstTrain: firstTrain,
             frequency: frequency,
-            timeStamp: firebase.database.ServerValue.TIMESTAMP
+            // timeStamp: firebase.database.ServerValue.TIMESTAMP
 
         })
     })
@@ -109,4 +109,4 @@ database.ref().on("value", function (snapshot) {
         location.reload();
     }, 60000)
 
-})
+// })
